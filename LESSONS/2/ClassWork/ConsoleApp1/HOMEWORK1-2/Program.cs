@@ -52,6 +52,12 @@ namespace HOMEWORK1_2
                 Console.WriteLine(Math.Pow(number1, number2));
             }
             else
+            if (t == "*")
+            {
+                Console.WriteLine("Произведение:");
+                Console.WriteLine(number1* number2);
+            }
+            else
             {
                 Console.WriteLine("Вы ввели не верный символ");
                 
