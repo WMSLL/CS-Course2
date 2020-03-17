@@ -56,7 +56,7 @@ namespace HOMEWORK1_2
                 Console.WriteLine("Вы ввели не верный символ");
                 
             }
-
+            Console.WriteLine("Нажмити любую клавишу");
             Console.ReadKey();
         }
     }
