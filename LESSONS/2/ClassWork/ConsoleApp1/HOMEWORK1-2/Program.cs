@@ -7,52 +7,41 @@ namespace HOMEWORK1_2
         static void Main(string[] args)
         {
             Console.WriteLine("Введите первое число");
-
-            string a = Console.ReadLine();
-
-            int number1 = int.Parse(a);
+            int number1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Введите второе число");
-
-            string b = Console.ReadLine();
-
-            int number2 = int.Parse(b);
+            int number2 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Введите тип операции(+,-,/,*,%,^)");
 
-            var t = Console.ReadLine();
+            var operationType = Console.ReadLine();
 
-            if (t=="+")
+            if (operationType == "+")
             {
                 Console.WriteLine("Сумма:");
                 Console.WriteLine(number1 + number2);
             }
-            else
-            if (t=="-")
+            else             if (operationType == "-")
             {
                 Console.WriteLine("Разница:");
                 Console.WriteLine(number1 - number2);
             }
-            else
-            if (t == "/")
+            else             if (operationType == "/")
             {
                 Console.WriteLine("деление:");
                 Console.WriteLine(number1 / number2);
             }
-            else
-            if (t == "%")
+            else             if (operationType == "%")
             {
                 Console.WriteLine("Остаток:");
                 Console.WriteLine(number1 % number2);
             }
-            else
-            if (t == "^")
+            else            if (operationType == "^")
             {
                 Console.WriteLine("Степень:");
                 Console.WriteLine(Math.Pow(number1, number2));
             }
-            else
-            if (t == "*")
+            else            if (operationType == "*")
             {
                 Console.WriteLine("Произведение:");
                 Console.WriteLine(number1* number2);
