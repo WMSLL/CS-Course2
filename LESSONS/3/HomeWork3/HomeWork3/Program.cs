@@ -20,6 +20,8 @@ namespace HomeWork3
 
             }
 
+            Console.WriteLine();
+
             for (var i = 0; i < age.Length; i++)
             {
               Console.WriteLine($"Enter the employee's {names[i]} age " );
