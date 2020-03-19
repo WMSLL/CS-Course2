@@ -15,14 +15,14 @@ namespace HomeWork3
 
               for (var i =0;i<names.Length;i++)
             {
-               Console.WriteLine($"Введите {i+1}-го сотрудника");
+               Console.WriteLine($"Enter the name of the {i+1}st employee");
                names[i] = Console.ReadLine();
 
             }
 
             for (var i = 0; i < age.Length; i++)
             {
-              Console.WriteLine($"Введите Возраст сотрудника {names[i]}" );
+              Console.WriteLine($"Enter the employee's {names[i]} age " );
               age[i] = Console.ReadLine();
             }
 
@@ -34,6 +34,7 @@ namespace HomeWork3
 
 
 
+            Console.ReadKey();
         }
     }
 }
