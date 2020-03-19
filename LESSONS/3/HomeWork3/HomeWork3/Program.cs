@@ -33,7 +33,7 @@ namespace HomeWork3
             }
 
 
-
+            Console.WriteLine("Press any key");
             Console.ReadKey();
         }
     }
