@@ -13,10 +13,10 @@ namespace HomeWork3
 
             int[] age = new int[3];
 
-              for (var i =0;i<names.Length;i++)
+            for (var i = 0; i < names.Length; i++)
             {
-               Console.WriteLine($"Enter the name of the {i+1}st employee");
-               names[i] = Console.ReadLine();
+                Console.WriteLine($"Enter the name of the {i + 1}st employee");
+                names[i] = Console.ReadLine();
 
             }
 
@@ -24,14 +24,14 @@ namespace HomeWork3
 
             for (var i = 0; i < age.Length; i++)
             {
-              Console.WriteLine($"Enter the employee's {names[i]} age " );
-              age[i] = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Enter the employee's {names[i]} age ");
+                age[i] = int.Parse(Console.ReadLine());
             }
 
-            
+
             for (var i = 0; i < names.Length; i++)
             {
-                Console.WriteLine($"Name: {names[i]}, age in 4 years :{age[i]+4}");
+                Console.WriteLine($"Name: {names[i]}, age in 4 years :{age[i] + 4}");
             }
 
 
