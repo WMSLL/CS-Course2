@@ -7,9 +7,9 @@ namespace ClassWork4
         static void Main(string[] args)
         {
 
-           
-            
-            
+
+
+
             // Префиксный инкримент ++i
             int a = 0;
             int b = 0;
@@ -55,7 +55,7 @@ namespace ClassWork4
             // }
 
 
-            var array = new string [2];
+            var array = new string[2];
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -63,8 +63,8 @@ namespace ClassWork4
             }
 
 
-           
-            
+
+
             for (int i = 0; i != array.Length; i++)
             {
                 Console.WriteLine();
@@ -72,14 +72,41 @@ namespace ClassWork4
 
 
             var g = 9.8;
-
             int f = (int)g;
-
-
             var i = 9.5;
-            Console.WriteLine(Math.Round(i));
 
-            Console.WriteLine( Math.);
+            //////////////////////////////
+            // Перечесление..
+
+        enum operation
+        {
+            Plus = 1,
+            Minus = 2,
+            Product = 3,
+            Division = 4
         }
-    }
+        var p = 11;
+        var po = 12;
+
+        switch (operation)
+	{
+		               case operation.Plus:
+            Console.WriteLine(p+po );
+                    break;
+                   case operation.Minus:
+              Console.WriteLine(p-po );
+                    break;
+                   case operation.Product:
+              Console.WriteLine(p*po );
+                    break;
+                   case operation.Division:
+              Console.WriteLine(p/po );
+                    break;
+                   default:
+                      break;
+	}
+
+
+}
+}
 }
