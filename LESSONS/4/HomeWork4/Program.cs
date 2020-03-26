@@ -63,7 +63,7 @@ namespace HomeWork4
               
             }
 
-            var   result= (contByte & (int)ContTypeByte.L20);
+            
 
            
 
