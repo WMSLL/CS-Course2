@@ -4,7 +4,7 @@ using System.Linq;
 namespace HomeWork4
 {
 
-    enum containerType 
+    enum containerType
     {
         L20 = 20,
         L5 = 5,
@@ -14,8 +14,8 @@ namespace HomeWork4
     };
 
     enum ContTypeByte : byte
-     {
-        L20 =0b00000100,
+    {
+        L20 = 0b00000100,
         L5 = 0b00000010,
         L1 = 0b00000001
     }
@@ -23,23 +23,23 @@ namespace HomeWork4
     {
         static void Main(string[] args)
         {
-            
+
 
             Console.WriteLine("Какой объем сока(в литрах) требуется упаковать:");
 
-           var contByte = 0;
+            var contByte = 0;
 
-           
+
 
             var totalJuice = double.Parse(Console.ReadLine().Replace(".", ","));
-           
+
             var countCont20 = totalJuice / (int)containerType.L20;
-            
+
             var contCont5 = (totalJuice - (int)countCont20 * (int)containerType.L20) / (int)containerType.L5;
-            
+
             var contCont1 = totalJuice - (((int)countCont20 * (int)containerType.L20) + ((int)contCont5 * (int)containerType.L5));
 
-            
+
 
 
 
@@ -60,16 +60,16 @@ namespace HomeWork4
             {
                 Console.WriteLine($"1-ти литровых { (int)Math.Ceiling(contCont1)}");
                 contByte = contByte | (int)ContTypeByte.L1;
-              
+
             }
 
-            
 
-           
+
+
 
             if ((contByte & (int)ContTypeByte.L20) == (int)ContTypeByte.L20)
             {
-                Console.WriteLine("Были использованы 20-ти литровые контейнера"); 
+                Console.WriteLine("Были использованы 20-ти литровые контейнера");
             }
 
             if ((contByte & (int)ContTypeByte.L5) == (int)ContTypeByte.L5)
@@ -85,7 +85,7 @@ namespace HomeWork4
 
 
             Console.WriteLine("Нажмити любую клавишу");
-           
+
             Console.ReadKey();
 
 
