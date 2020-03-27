@@ -64,6 +64,9 @@ namespace HomeWork5
             {
                 Console.WriteLine("Ошибка! Введено нечисловое значение!");
             }
+            Console.WriteLine("Нажмити любую клавишу");
+
+            Console.ReadKey();
         }
     }
 }
