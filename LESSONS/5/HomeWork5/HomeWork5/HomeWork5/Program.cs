@@ -41,7 +41,7 @@ namespace HomeWork5
                         break;
 
                     default:
-                        Console.WriteLine("Ввели не верную фигуру повторите ввод");
+                        Console.WriteLine("Ввели не существующие значение");
                         goto returnenum;
                 }
             }
