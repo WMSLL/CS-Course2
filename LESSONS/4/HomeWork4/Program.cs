@@ -30,19 +30,19 @@ namespace HomeWork4
             var contCont5 = ((totalJuice % (int)ContainerType.L20) / (int)ContainerType.L5);
             var contCont1 = ((totalJuice % (int)ContainerType.L20) % (int)ContainerType.L5);
 
-            if ((int)countCont20 > 0)
+            if (Math.Floor(countCont20) > 0)
             {
                 Console.WriteLine($"20-ти литровых {Math.Floor(countCont20)}");
                 contByte = contByte | (int)ContainerCapaсity.L20;
             }
 
-            if ((int)contCont5 > 0)
+            if (Math.Floor(contCont5) > 0)
             {
                 Console.WriteLine($"5-ти литровых { Math.Floor(contCont5)}");
                 contByte = contByte | (int)ContainerCapaсity.L5;
             }
 
-            if ((int)Math.Ceiling(contCont1) > 0)
+            if (Math.Ceiling(contCont1) > 0)
             {
                 Console.WriteLine($"1-и литровых { Math.Ceiling(contCont1)}");
                 contByte = contByte | (int)ContainerCapaсity.L1;
