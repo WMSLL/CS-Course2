@@ -58,7 +58,7 @@ namespace HomeWork4
 
             if ((int)Math.Ceiling(contCont1) > 0)
             {
-                Console.WriteLine($"1-ти литровых { (int)Math.Ceiling(contCont1)}");
+                Console.WriteLine($"1-и литровых { (int)Math.Ceiling(contCont1)}");
                 contByte = contByte | (int)ContTypeByte.L1;
 
             }
