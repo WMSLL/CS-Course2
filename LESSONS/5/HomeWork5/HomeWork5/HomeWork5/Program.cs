@@ -45,9 +45,10 @@ namespace HomeWork5
                         goto returnenum;
                 }
             }
-            catch (Exception)
+            catch (ArgumentException )
             {
                 Console.WriteLine("Ввели не существующие значение");
+               
                 goto returnenum;
             }
             Console.WriteLine("Нажмити любую клавишу для завершения");
