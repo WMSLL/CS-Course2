@@ -4,9 +4,9 @@ namespace HomeWork5
 {
     enum Figure
     {
-        circle = 1,
-        rectangle = 2,
-        triangular = 3
+        Circle = 1,
+        Rectangle = 2,
+        Triangular = 3
     }
     class Program
     {
@@ -17,18 +17,18 @@ namespace HomeWork5
 
             switch (selectFigure)
             {
-                case Figure.circle:
+                case Figure.Circle:
                     double radius = ReadParam("Введите радиус круга");
                     Console.WriteLine($" Площадь круга :{Math.PI * Math.Pow(radius, 2)}");
                     break;
 
-                case Figure.rectangle:
+                case Figure.Rectangle:
                     double side1 = ReadParam("Введите сторону 'a' Прямоугольника");
                     double side2 = ReadParam("Введите сторону 'b' Прямоугольника");
                     Console.WriteLine($" Площадь круга :{side1 * side2}");
                     break;
 
-                case Figure.triangular:
+                case Figure.Triangular:
                     double sideTriangular = ReadParam("Введите сторону равностороннего треугольника");
                     Console.WriteLine($" Площадь треугольного :{Math.Pow(sideTriangular, 2) * Math.Sqrt(3) / 4}");
                     break;
