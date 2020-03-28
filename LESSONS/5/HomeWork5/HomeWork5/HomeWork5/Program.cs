@@ -2,7 +2,7 @@
 
 namespace HomeWork5
 {
-    enum figure
+    enum Figure
     {
         circle = 1,
         rectangle = 2,
@@ -12,48 +12,54 @@ namespace HomeWork5
     {
         static void Main()
         {
-            area();
-        }
-
-        static void area()
-        {
         returnenum:
-            Console.WriteLine("Выберите фигуру у которой нужно посчитать площадь 'S'(Круг=1,Прямоугольник=2, Треугольник=3)");
-            try
+            var selectFigure = numeration("Выберите фигуру у которой нужно посчитать площадь 'S'(Круг=1,Прямоугольник=2, Треугольник=3)");
+
+            switch (selectFigure)
             {
-                var selectFigure = Enum.Parse(typeof(figure), Console.ReadLine());
-                switch (selectFigure)
-                {
-                    case figure.circle:
-                        double radius = ReadParam("Введите радиус круга");
-                        Console.WriteLine($" Площадь круга :{Math.PI * Math.Pow(radius, 2)}");
-                        break;
+                case Figure.circle:
+                    double radius = ReadParam("Введите радиус круга");
+                    Console.WriteLine($" Площадь круга :{Math.PI * Math.Pow(radius, 2)}");
+                    break;
 
-                    case figure.rectangle:
-                        double side1 = ReadParam("Введите сторону 'a' Прямоугольника");
-                        double side2 = ReadParam("Введите сторону 'b' Прямоугольника");
-                        Console.WriteLine($" Площадь круга :{side1 * side2}");
-                        break;
+                case Figure.rectangle:
+                    double side1 = ReadParam("Введите сторону 'a' Прямоугольника");
+                    double side2 = ReadParam("Введите сторону 'b' Прямоугольника");
+                    Console.WriteLine($" Площадь круга :{side1 * side2}");
+                    break;
 
-                    case figure.triangular:
-                        double sideTriangular = ReadParam("Введите сторону равностороннего треугольника");
-                        Console.WriteLine($" Площадь треугольного :{Math.Pow(sideTriangular, 2) * Math.Sqrt(3) / 4}");
-                        break;
-
-                    default:
-                        Console.WriteLine("Ввели не существующие значение");
-                        goto returnenum;
-                }
-            }
-            catch (ArgumentException )
-            {
-                Console.WriteLine("Ввели не существующие значение");
-               
-                goto returnenum;
+                case Figure.triangular:
+                    double sideTriangular = ReadParam("Введите сторону равностороннего треугольника");
+                    Console.WriteLine($" Площадь треугольного :{Math.Pow(sideTriangular, 2) * Math.Sqrt(3) / 4}");
+                    break;
+                default:
+                    Console.WriteLine("Ввели не существующие значение .");
+                    goto returnenum;
+                   
             }
             Console.WriteLine("Нажмити любую клавишу для завершения");
             Console.ReadKey();
         }
+
+        static object numeration(string title)
+        {
+            for (; ; )
+            {
+                try
+                {
+                    Console.WriteLine(title);
+                    return Enum.Parse(typeof(Figure), Console.ReadLine());
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("Ввели не существующие значение .");
+                    Console.WriteLine(title);
+                }
+            }
+
+        }
+
+
 
         static double ReadParam(string title)
         {
@@ -63,7 +69,7 @@ namespace HomeWork5
                 {
                     Console.WriteLine(title);
                     return double.Parse(Console.ReadLine().Replace(".", ","));
-                    break;
+
                 }
                 catch (FormatException)
                 {
