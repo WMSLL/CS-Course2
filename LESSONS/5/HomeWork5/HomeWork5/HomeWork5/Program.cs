@@ -12,51 +12,48 @@ namespace HomeWork5
     {
         static void Main()
         {
-        returnenum:
-            var selectFigure = numeration("Выберите фигуру у которой нужно посчитать площадь 'S'(Круг=1,Прямоугольник=2, Треугольник=3)");
-
+            var selectFigure = Numeration("Выберите фигуру у которой нужно посчитать площадь 'S'(Круг=1,Прямоугольник=2, Треугольник=3)");
             switch (selectFigure)
             {
                 case Figure.Circle:
                     double radius = ReadParam("Введите радиус круга");
                     Console.WriteLine($" Площадь круга :{Math.PI * Math.Pow(radius, 2)}");
                     break;
-
                 case Figure.Rectangle:
                     double side1 = ReadParam("Введите сторону 'a' Прямоугольника");
                     double side2 = ReadParam("Введите сторону 'b' Прямоугольника");
-                    Console.WriteLine($" Площадь круга :{side1 * side2}");
+                    Console.WriteLine($" Площадь прямоугольника :{side1 * side2}");
                     break;
-
                 case Figure.Triangular:
                     double sideTriangular = ReadParam("Введите сторону равностороннего треугольника");
                     Console.WriteLine($" Площадь треугольного :{Math.Pow(sideTriangular, 2) * Math.Sqrt(3) / 4}");
                     break;
-                default:
-                    Console.WriteLine("Ввели не существующие значение .");
-                    goto returnenum;
-                   
             }
             Console.WriteLine("Нажмити любую клавишу для завершения");
             Console.ReadKey();
         }
-
-        static object numeration(string title)
+        static object Numeration(string title)
         {
             for (; ; )
             {
                 try
                 {
                     Console.WriteLine(title);
-                    return Enum.Parse(typeof(Figure), Console.ReadLine());
+                    var values = Enum.Parse(typeof(Figure), Console.ReadLine());
+                    if (Enum.IsDefined(typeof(Figure), values))
+                    {
+                        return Enum.Parse(typeof(Figure), values.ToString());
+                    }
+                    else
+                    {
+                        throw new ArgumentException();
+                    }
                 }
                 catch (ArgumentException)
                 {
-                    Console.WriteLine("Ввели не существующие значение .");
-                    Console.WriteLine(title);
+                    Console.WriteLine("Вы ввели не существующие значение");
                 }
             }
-
         }
 
 
@@ -69,7 +66,6 @@ namespace HomeWork5
                 {
                     Console.WriteLine(title);
                     return double.Parse(Console.ReadLine().Replace(".", ","));
-
                 }
                 catch (FormatException)
                 {
