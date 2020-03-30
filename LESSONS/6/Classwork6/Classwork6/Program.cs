@@ -6,24 +6,58 @@ namespace Classwork6
     {
         static void Main(string[] args)
         {
-            int count = 10;
-            int[] a = new int[count];
 
-            for (int i = 0; i < a.Length; i++)
+            var marks = new[]
             {
-                a[i] = new Random().Next(0,50);
-            }
+                new[] { 2,3,3,2,3},
+                new[] { 2,4,3,5},
+                null,
+                new[] {5,5,5,5,},
+                new[] {4}
+            };
 
-            int countWhile = 0;
-            int sum=0;
-            while (countWhile < count)
+            double sum = 0.0;
+            double sum2 = 0.0;
+            for (int i = 0; i < marks.Length; i++)
             {
-                sum+= a[countWhile];
-                countWhile++;
+                 
+                if (marks[i] == null)
+                {
+                    continue;
+                }
 
-                Console.WriteLine($"{sum}");
+                for (int j = 0; j < marks[i].Length; j++)
+                {
+                      sum += marks[i][j];                                       
+                }
+               
+                Console.WriteLine($"{sum / marks[i].Length}");
+                sum = 0;
+
+
             }
+           
             Console.ReadKey();
+            
+            
+            //int count = 10;
+           //int[] a = new int[count];
+           //
+           //for (int i = 0; i < a.Length; i++)
+           //{
+           //    a[i] = new Random().Next(0,50);
+           //}
+           //
+           //int countWhile = 0;
+           //int sum=0;
+           //while (countWhile < count)
+           //{
+           //    sum+= a[countWhile];
+           //    countWhile++;
+           //
+           //    Console.WriteLine($"{sum}");
+           //}
+           //Console.ReadKey();
 
 
 
