@@ -6,7 +6,6 @@ namespace Classwork6
     {
         static void Main(string[] args)
         {
-
             var marks = new[]
             {
                 new[] { 2,3,3,2,3},
@@ -17,24 +16,19 @@ namespace Classwork6
             };
 
             double sum = 0.0;
-            double sum2 = 0.0;
+           
             for (int i = 0; i < marks.Length; i++)
-            {
-                 
+            {                 
                 if (marks[i] == null)
                 {
                     continue;
                 }
-
                 for (int j = 0; j < marks[i].Length; j++)
                 {
                       sum += marks[i][j];                                       
-                }
-               
+                }               
                 Console.WriteLine($"{sum / marks[i].Length}");
                 sum = 0;
-
-
             }
            
             Console.ReadKey();
