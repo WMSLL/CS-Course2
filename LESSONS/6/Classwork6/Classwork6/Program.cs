@@ -11,7 +11,7 @@ namespace Classwork6
 
             for (int i = 0; i < a.Length; i++)
             {
-                a[i] = i;
+                a[i] = new Random().Next(0,50);
             }
 
             int countWhile = 0;
