@@ -6,25 +6,51 @@ namespace Classwork6
     {
         static void Main(string[] args)
         {
-            string exit;
-            do
-            {
-                Console.WriteLine("Введите текст");
-                 exit = Console.ReadLine();
-                if(exit.Length<=15)
-                {
-                    Console.WriteLine($"Enter string lenght{exit.Length}");
-                }
-                if (exit.Length > 15)
-                {
-                    Console.WriteLine($"Too long string.try another {exit.Length}");
-                    continue;
-                }
-            }
-            while (exit.ToLower()!="exit".ToLower());
+            int count = 10;
+            int[] a = new int[count];
 
-            Console.WriteLine("Вышли из цикла");
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = i;
+            }
+
+            int countWhile = 0;
+            int sum=0;
+            while (countWhile < count)
+            {
+                sum+= a[countWhile];
+                countWhile++;
+
+                Console.WriteLine($"{sum}");
+            }
             Console.ReadKey();
+
+
+
+
+
+
+
+
+            //string exit;
+            //do
+            //{
+            //    Console.WriteLine("Введите текст");
+            //     exit = Console.ReadLine();
+            //    if(exit.Length<=15)
+            //    {
+            //        Console.WriteLine($"Enter string lenght{exit.Length}");
+            //    }
+            //    if (exit.Length > 15)
+            //    {
+            //        Console.WriteLine($"Too long string.try another {exit.Length}");
+            //        continue;
+            //    }
+            //}
+            //while (exit.ToLower()!="exit".ToLower());
+            //
+            //Console.WriteLine("Вышли из цикла");
+            //Console.ReadKey();
         }
 
     }
