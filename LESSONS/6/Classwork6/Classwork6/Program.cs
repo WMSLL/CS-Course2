@@ -18,9 +18,10 @@ namespace Classwork6
                 if (exit.Length > 15)
                 {
                     Console.WriteLine($"Too long string.try another {exit.Length}");
+                    continue;
                 }
             }
-            while (exit!="exit");
+            while (exit.ToLower()!="exit".ToLower());
 
             Console.WriteLine("Вышли из цикла");
             Console.ReadKey();
