@@ -6,7 +6,18 @@ namespace Classwork6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string exit;
+            do
+            {
+                Console.WriteLine("Введите 'exit' для выхода");
+                 exit = Console.ReadLine();
+
+            }
+            while (exit!="exit");
+
+            Console.WriteLine("Вышли из цикла");
+
+            Console.ReadKey();
         }
     }
 }
