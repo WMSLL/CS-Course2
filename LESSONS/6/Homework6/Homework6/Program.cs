@@ -8,15 +8,17 @@ namespace Homework6
         static void Main(string[] args)
         {
             var number = ReadNumber("Введите положительное натуральное число не более 2-х миллиардов");
-            int[] digits = number.ToString().Select(c => (int)char.GetNumericValue(c)).ToArray();
+            int[] digits = number.ToString().Select(c => (int)char.GetNumericValue(c)).ToArray();            
+            int sum = 0;
             for (int i = 0; i < number.ToString().Length; i++)
             {
                 if (digits[i] % 2 != 0)
                 {
                     continue;
                 }
-                Console.WriteLine(digits[i]);
-            }
+                sum += digits[i].ToString().Length;                   
+            }          
+            Console.WriteLine($"Введенное число {number} cодержит следующее колличество четных цифр: {sum}");
             Console.WriteLine("Для выхода нажмите любую клавишу");
             Console.ReadKey();
         }
@@ -25,14 +27,24 @@ namespace Homework6
         {
             for (; ; )
             {
+                int enterNum=0;
                 try
                 {
                     Console.WriteLine(title);
-                    return int.Parse(Console.ReadLine());
+                    enterNum = int.Parse(Console.ReadLine());
+                    if((enterNum<0))
+                    {
+                        throw new FormatException();
+                    }
+                    if(enterNum > 2000000000)
+                    {
+                        throw new OverflowException();
+                    }
+                    return enterNum;
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Вы ввели не числовое значение,повторите ввод");
+                    Console.WriteLine("Вы ввели не числовое значение,или отрицательное3 число,повторите ввод");
                 }
                 catch (OverflowException)
                 {
