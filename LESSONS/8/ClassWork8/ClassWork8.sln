@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork8", "ClassWork8\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Independentwork8", "Independentwork8\Independentwork8.csproj", "{B8CE11FF-0CCD-4E39-9AA7-C85D8B6DBECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Independentwork8-2", "Independentwork8-2\Independentwork8-2.csproj", "{7C4EF17F-9372-4C9C-B81C-4223E452B4C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B8CE11FF-0CCD-4E39-9AA7-C85D8B6DBECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8CE11FF-0CCD-4E39-9AA7-C85D8B6DBECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8CE11FF-0CCD-4E39-9AA7-C85D8B6DBECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4EF17F-9372-4C9C-B81C-4223E452B4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4EF17F-9372-4C9C-B81C-4223E452B4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4EF17F-9372-4C9C-B81C-4223E452B4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4EF17F-9372-4C9C-B81C-4223E452B4C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
