@@ -1,42 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Independentwork8_2
 {
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            var dictCountry = new Dictionary<int, string>() { 
-            { 1,"Российская Федерация"},
-            { 2,"США"},
-            { 3,"Германия"},
-            { 4,"Япония"},
-            { 5,"Китай"} };
+            var dictCountry = new Dictionary<string, string>() {
+            { "Москва","Российская Федерация"},
+            { "Вашингтон","США"},
+            { "Берлин","Германия"},
+            { "Токио","Япония"},
+            { "Пекин","Китай"} };
 
-            var dictСapital = new Dictionary<int, string>() {
-            { 1,"Москва"},
-            { 2,"Вышингтон"},
-            { 3,"Берлин"},
-            { 4,"Токио"},
-            { 5,"Пекин"} };
-
-            var rnm = new Random().Next(1, 5);
-
-            var country = dictCountry[rnm] ;
-
-            Console.WriteLine($"Какая столица у {country}");
-
-            var Сapital=Console.ReadLine();
-
-            Console.WriteLine();
-
-            
-
-
-
-
+            while (true)
+            {
+                var rnm = new Random().Next(1, 5);
+                KeyValuePair<string, string> kpv = dictCountry.ElementAtOrDefault(rnm);
+                var keyKpv = kpv.Key;
+                var valueKpv = kpv.Value;
+                Console.WriteLine($"Какая столица в {valueKpv}");
+                var answer = Console.ReadLine().ToUpper();
+                if (keyKpv.ToUpper() != answer)
+                {
+                    Console.WriteLine($"ответ {answer} не верный");
+                    break;
+                }
+                Console.WriteLine($"ответ {answer}  верный");
+            }
         }
     }
 }
