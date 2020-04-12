@@ -9,19 +9,19 @@ namespace HomeWork8
         static void Main(string[] args)
         {
             while (true)
-            {     
+            {
                 Console.WriteLine("Введите набор скобок [],() для выхода наберите EXIT");
-                var line =Console.ReadLine();
+                var line = Console.ReadLine();
                 if (line.ToUpper() == "EXIT")
                 {
                     break;
                 }
                 Console.WriteLine(CheckPltBrts(line));
-            }            
+            }
         }
 
         static bool CheckPltBrts(string value)
-        {           
+        {
             var checkStack = new Stack<char>();
             foreach (var brackets in value)
             {
@@ -38,9 +38,6 @@ namespace HomeWork8
                     case ')':
                         if (checkStack.Count == 0) return false;
                         if (checkStack.Pop() != '(') return false;
-                        break;
-                    default:
-                        if (checkStack.Count == 0) return false;
                         break;
                 }
             }
