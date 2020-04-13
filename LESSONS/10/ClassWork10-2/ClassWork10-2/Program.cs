@@ -13,11 +13,15 @@ namespace ClassWork10_2
                 _name = "bob",
                 _sex = 'M'
             };
+            Console.WriteLine($"Питомец {Pet._kind} Кличка {Pet._name} Возраст {Pet._age} Пол {Pet._sex}");
+
             var Pet2 = new Pet();
-            Pet2._age = 12;
-            Pet2._kind = "Dog";
-            Pet2._name = "bob";
-            Pet2._sex = 'M';
+            Pet2._age = 14;
+            Pet2._kind = "Cat";
+            Pet2._name = "Tom";
+            Pet2._sex = 'm';
+
+            Console.WriteLine($"Питомец {Pet2._kind} Кличка {Pet2._name} Возраст {Pet2._age} Пол {Pet2._sex}");
         }
 
 
