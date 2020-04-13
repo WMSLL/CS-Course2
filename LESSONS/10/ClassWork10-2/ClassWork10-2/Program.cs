@@ -11,7 +11,7 @@ namespace ClassWork10_2
                 _age = 12,
                 _kind = "Dog",
                 _name = "bob",
-                _sex = 'M'
+                _sex = 'M' 
             };
             var Pet2 = new Pet();
             Pet2._age = 12;
