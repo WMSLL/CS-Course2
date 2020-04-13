@@ -13,7 +13,7 @@ namespace ClassWork10_2
                 _name = "bob",
                 _sex = 'M'
             };
-            Console.WriteLine(Pet.InfoPet());
+            Console.WriteLine(Pet.InfoPet);
 
         }
 
