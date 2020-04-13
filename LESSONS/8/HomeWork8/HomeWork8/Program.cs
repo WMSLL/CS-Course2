@@ -22,24 +22,31 @@ namespace HomeWork8
 
         static bool CheckPltBrts(string value)
         {
+            var validDict = new Dictionary<char,char>();
+            validDict.Add('[', ']');
+            validDict.Add('(', ')');
+
             var checkStack = new Stack<char>();
             foreach (var brackets in value)
             {
-                switch (brackets)
-                {
-                    case '[':
-                    case '(':
-                        checkStack.Push(brackets);
-                        break;
-                    case ']':
-                        if (checkStack.Count == 0) return false;
-                        if (checkStack.Pop() != '[') return false;
-                        break;
-                    case ')':
-                        if (checkStack.Count == 0) return false;
-                        if (checkStack.Pop() != '(') return false;
-                        break;
-                }
+                Console.WriteLine(validDict.TryGetValue(brackets,out var t));
+
+                
+               //switch (brackets)
+               //{
+               //    case '[':
+               //    case '(':
+               //        checkStack.Push(brackets);
+               //        break;
+               //    case ']':
+               //        if (checkStack.Count == 0) return false;
+               //        if (checkStack.Pop() != '[') return false;
+               //        break;
+               //    case ')':
+               //        if (checkStack.Count == 0) return false;
+               //        if (checkStack.Pop() != '(') return false;
+               //        break;
+               //}
             }
             return checkStack.Count == 0;
         }
