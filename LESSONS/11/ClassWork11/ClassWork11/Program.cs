@@ -7,6 +7,9 @@ namespace ClassWork11
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var petinto = new Pets() ;
+            
+            
         }
     }
 }
