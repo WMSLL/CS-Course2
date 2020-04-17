@@ -19,15 +19,15 @@ namespace HomeWork10
         {
             get { return _age + 4; }
         }
-        public string EndLine{
+        public string EndLine
+        {
             get { return $"Сотруднику {Name} Через 4-ре года будет {_ageAfter} "; }
-        }      
+        }
 
-       public Employee(string aName,int age)
+        public Employee(string aName, int age)
         {
             Name = aName;
             Age = age;
-
         }
 
         public void OutPut()
