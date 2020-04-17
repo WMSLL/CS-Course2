@@ -3,18 +3,40 @@ namespace HomeWork10
 {
     public class Employee
     {
-        public string[] name;
-        public int[] age;
-        static int Age4Years { get; set; }
-        static string EndLine { get; set; }        
+        static string _name;
+        public string Name
+        {
+            set { _name = value; }
+            get { return _name; }
+        }
+        static int _age;
+        public int Age
+        {
+            set { _age = value; }
+            get { return _age; }
+        }
+        static int _ageAfter
+        {
+            get { return _age + 4; }
+        }
+        public string EndLine{
+            get { return $"Сотруднику {Name} Через 4-ре года будет {_ageAfter} "; }
+        }      
+
+       public Employee(string aName,int age)
+        {
+            Name = aName;
+            Age = age;
+
+        }
+
         public void OutPut()
         {
-            for (int i = 0; i < age.Length; i++)
-            {
-                Age4Years = age[i] + 4;
-                EndLine = $"Name: {name[i]}, age in 4 years :{Age4Years}";
-                Console.WriteLine(EndLine);
-            }
+            Console.WriteLine(EndLine);
         }
+
+
+
+
     }
 }

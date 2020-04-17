@@ -5,25 +5,21 @@ namespace HomeWork10
     class Program
     {
         static void Main(string[] args)
-        {   
-            var emp = new Employee();
-            string[] names = new string[3];
-            int[] age = new int[3];
-            for (var i = 0; i < names.Length; i++)
+        {
+            var countArrey = 3;
+            Employee[] employoees = new Employee[countArrey];
+            for (int i = 0; i < countArrey; i++)
             {
-                Console.WriteLine($"Enter the name of the {i + 1}st employee");
-                names[i] = Console.ReadLine();
+                Console.WriteLine("Имя");
+                var name = Console.ReadLine();
+                Console.WriteLine("Возраст");
+                var age = int.Parse(Console.ReadLine());
+                employoees[i] = new Employee(name, age);
+
             }
-            for (var i = 0; i < age.Length; i++)
-            {
-                Console.WriteLine($"Enter the employee's {names[i]} age ");
-                age[i] = int.Parse(Console.ReadLine());
-            }     
-            emp.Name = names;
-            emp.age = age;
-            emp.OutPut();
-            Console.WriteLine("Press any key");
-            Console.ReadLine();
+            Console.WriteLine(employoees[0].EndLine);
+            Console.WriteLine(employoees[1].EndLine);
+            Console.WriteLine(employoees[2].EndLine);
         }
     }
 }
