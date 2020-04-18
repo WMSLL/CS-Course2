@@ -10,16 +10,45 @@ namespace HomeWork10
             Employee[] employoees = new Employee[countArrey];
             for (int i = 0; i < countArrey; i++)
             {
-                Console.WriteLine("Имя");
-                var name = Console.ReadLine();
-                Console.WriteLine("Возраст");
-                var age = int.Parse(Console.ReadLine());
+                var name = InPutName("Укажите имя сотрудника");
+                var age = InPutAge("Введите возраст сотрудника"); ;
                 employoees[i] = new Employee(name, age);
-
             }
-            Console.WriteLine(employoees[0].EndLine);
-            Console.WriteLine(employoees[1].EndLine);
-            Console.WriteLine(employoees[2].EndLine);
+            for (int i = 0; i < countArrey; i++)
+            {
+                Console.WriteLine(employoees[i].OutPut());
+            }
+        }
+
+        static int InPutAge(string title)
+        {
+            while (true)
+            {
+                Console.WriteLine(title);
+                try
+                {
+                    return int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Указано не числовое значение: повторите ввод");
+                }
+            }
+        }
+        static string InPutName(string title)
+        {
+            while (true)
+            {
+                Console.WriteLine(title);
+                try
+                {
+                    return Console.ReadLine();
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Вы ввели пустое значение: повторите ввод");
+                }
+            }
         }
     }
 }

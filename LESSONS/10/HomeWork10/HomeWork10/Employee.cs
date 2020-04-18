@@ -3,19 +3,19 @@ namespace HomeWork10
 {
     public class Employee
     {
-        static string _name;
+        string _name;
         public string Name
         {
             set { _name = value; }
             get { return _name; }
         }
-        static int _age;
+        int _age;
         public int Age
         {
             set { _age = value; }
             get { return _age; }
         }
-        static int _ageAfter
+        int _ageAfter
         {
             get { return _age + 4; }
         }
@@ -30,9 +30,9 @@ namespace HomeWork10
             Age = age;
         }
 
-        public void OutPut()
+        public string OutPut()
         {
-            Console.WriteLine(EndLine);
+            return EndLine;
         }
 
 
