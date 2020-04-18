@@ -4,15 +4,10 @@ namespace HomeWork10
     public class Employee
     {
         public string Name { set; get; }
-        int _age;
-        public int Age
-        {
-            set { _age = value; }
-            get { return _age; }
-        }
+        public int Age { set; get; }
         int _ageAfter
         {
-            get { return _age + 4; }
+            get { return Age + 4; }
         }
         public string EndLine
         {
