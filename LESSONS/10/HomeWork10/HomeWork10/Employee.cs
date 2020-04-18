@@ -3,12 +3,7 @@ namespace HomeWork10
 {
     public class Employee
     {
-        string _name;
-        public string Name
-        {
-            set { _name = value; }
-            get { return _name; }
-        }
+        public string Name { set; get; }
         int _age;
         public int Age
         {

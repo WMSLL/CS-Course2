@@ -40,14 +40,12 @@ namespace HomeWork10
             while (true)
             {
                 Console.WriteLine(title);
-                try
+                var line = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(line))
                 {
-                    return Console.ReadLine();
+                    continue;
                 }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("Вы ввели пустое значение: повторите ввод");
-                }
+                return line;
             }
         }
     }
