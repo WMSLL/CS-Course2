@@ -13,6 +13,8 @@ namespace HomeWork11
             var alarm2 = new Alarm(date2, "Звонок2"); 
             Console.WriteLine(alarm2.WriteProperties());
             Console.ReadKey();
+
+
         }
     }
 }
