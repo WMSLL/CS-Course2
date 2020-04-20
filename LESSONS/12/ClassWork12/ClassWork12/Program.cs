@@ -7,7 +7,7 @@ namespace ClassWork12
         public string Title;
         public string Number;
         public DateTimeOffset IssueDate;
-        public string Discription => $"Title:{Title},Number:{Number}";
+        public virtual string Discription => $"Title:{Title},Number:{Number}";
         
         public void WriteToConsole()
         {
@@ -19,19 +19,18 @@ namespace ClassWork12
     {
         public string Country;
         public string PersonName;
-        public new string Discription => $"Title:{Title},Number:{Number},Country{Country},{PersonName}";
-        public  new void  WriteToConsole()
-        {
-             Console.WriteLine(Discription);
-        }
-
+        public override string Discription => $"Title:{Title},Number:{Number},Country{Country},{PersonName}";
+       
     }
     class Program
     {
         static void Main(string[] args)
         {
             var pasport = new Passport();
-            pasport.WriteToConsole();
+            Console.WriteLine(pasport.Discription);
+
+            var person = new BaseDoc();
+            Console.WriteLine(person.Discription);
         }
     }
 }
