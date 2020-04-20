@@ -30,7 +30,8 @@ namespace ClassWork12
     {
         static void Main(string[] args)
         {
-            Passport.WriteToConsole();
+            var pasport = new Passport();
+            pasport.WriteToConsole();
         }
     }
 }
