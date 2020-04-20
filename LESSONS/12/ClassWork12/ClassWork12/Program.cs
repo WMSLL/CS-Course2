@@ -9,13 +9,18 @@ namespace ClassWork12
         public DateTimeOffset IssueDate;
         public virtual string Discription => $"Title:{Title},Number:{Number}";
         
+        public BaseDoc(string Title, string Number, DateTimeOffset IssueDate)
+        {
+
+        }
         public void WriteToConsole()
         {
             Console.WriteLine(Discription);
         }
     }
 
-    public class Passport : BaseDoc
+    public class Passport(string title,string number, DateTimeOffset issueDate) : BaseDoc Base(string title, string number, DateTimeOffset issueDate))
+
     {
         public string Country;
         public string PersonName;
