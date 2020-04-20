@@ -5,8 +5,8 @@ namespace HomeWork11
     {
         DateTimeOffset AlarmDate { get; set; }
         string AlarmMessage { get; set; }
-        TimeSpan TimeToAlarm { get { return AlarmDate - DateTimeOffset.Now; } }
-        bool IsOutdated { get { return TimeToAlarm.TotalSeconds >= 0; } }
+        TimeSpan TimeToAlarm { get { return DateTimeOffset.Now-AlarmDate; } }
+        bool IsOutdated { get { return TimeToAlarm >= TimeSpan.Zero; } }
         public Alarm(DateTimeOffset date, string message)
         {
             AlarmDate = date;
