@@ -27,10 +27,10 @@ namespace ClassWork12
         static void Main(string[] args)
         {
             var pasport = new Passport();
-            Console.WriteLine(pasport.Discription);
+           pasport.WriteToConsole();
 
             var person = new BaseDoc();
-            Console.WriteLine(person.Discription);
+            person.WriteToConsole();
         }
     }
 }
