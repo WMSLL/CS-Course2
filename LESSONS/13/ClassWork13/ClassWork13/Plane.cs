@@ -6,7 +6,7 @@ namespace ClassWork13
     {
         public byte EnginesCount { get; private set; }
 
-        public Plane(int MaxHeight, byte EnginesCount)
+        public Plane(int maxHeight, byte EnginesCount) : base(maxHeight)
         {
 
         }

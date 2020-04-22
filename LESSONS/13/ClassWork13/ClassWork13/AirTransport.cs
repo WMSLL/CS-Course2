@@ -5,7 +5,17 @@ namespace ClassWork13
     {
         public int MaxHeight { get; private set; }
         public int CurrentHeight { get; private set; }
-        public void TakeUpper(int delta)
+
+        public void SetCurrentHeight(int sets)
+        {
+            CurrentHeight = sets;
+          
+        }
+        public AirTransport(int maxHeight)
+        {
+
+        }
+         public  void TakeUpper(int delta)
         {
             if (delta<=0)
             {
@@ -40,9 +50,6 @@ namespace ClassWork13
             }
         }
 
-        public virtual void WriteAllProperties()
-        {
-
-        }
+        public abstract void WriteAllProperties();
     }
 }

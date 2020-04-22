@@ -4,13 +4,14 @@ namespace ClassWork13
     class Helicopter: AirTransport
     {
         public byte BladesCount { get; private set; }
-       
-        
-       
-        public Helicopter (int MaxHeight,byte BladesCount)
+
+
+
+        public Helicopter(int maxHeight, byte BladesCount):base(maxHeight)
         {
 
         }
+
 
         public override void WriteAllProperties()
         {
