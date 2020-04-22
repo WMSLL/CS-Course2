@@ -6,7 +6,14 @@ namespace ClassWork13
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var helicompter = new Helicopter(100, 0b00000010);
+
+            var plane = new Plane(100, 0b00010000);
+
+            helicompter.TakeUpper(5);
+            helicompter.WriteAllProperties();
+
         }
     }
+
 }
