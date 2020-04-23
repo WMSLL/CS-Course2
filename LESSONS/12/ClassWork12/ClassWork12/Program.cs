@@ -16,11 +16,12 @@ namespace ClassWork12
                   new BaseDoc("DriverCertification","2123ds231"),
                 };
 
+
             foreach (var docType in docs)
             {
-                if (docType is Passport)
+                if (docType is Passport passport)
                 {
-                    docType.ChangeIssueDate();
+                    passport.ChangeIssueDate();
                 }
                 docType.WriteToConsole();
             }
@@ -31,6 +32,8 @@ namespace ClassWork12
             public string Title;
             public string Number;
             public DateTimeOffset IssueDate;
+
+            
             public virtual string Discription => $"Title : {Title},Number : {Number},IssueDate : {IssueDate}";
             public BaseDoc(string title, string number)
             {
@@ -41,10 +44,7 @@ namespace ClassWork12
             {
                 Console.WriteLine(Discription);
             }
-            public virtual void ChangeIssueDate()
-            {
-                IssueDate = DateTimeOffset.Now;
-            }
+           
         }
 
         class Passport : BaseDoc
@@ -54,9 +54,10 @@ namespace ClassWork12
             {
 
             }
-            public string Country = "Russia";
-            public string PersonName = "Valera";
-            public override void ChangeIssueDate()
+            public string Country="Russia" ;
+            public string PersonName="Вася" ;
+
+            public  void ChangeIssueDate()
             {
                 IssueDate = DateTimeOffset.Now;
             }
