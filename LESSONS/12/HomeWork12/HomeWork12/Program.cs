@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HomeWork12
 
@@ -7,13 +8,16 @@ namespace HomeWork12
     {
         static void Main(string[] args)
         {
-            DateTime date1 = new DateTime(2020, 4, 20, 11, 00, 00);
-            var alarm1 = new Alarm(date1, "Звонок1");
-            Console.WriteLine(alarm1.WriteProperties());
-            DateTime date2 = new DateTime(2020, 4, 19, 22, 00, 00);
-            var alarm2 = new Alarm(date2, "Звонок2");
-            Console.WriteLine(alarm2.WriteProperties());
-            Console.ReadKey();
+            var list = new List<Alarm>
+            {
+                new PhonePhoneReminderItem(DateTime.Parse("23.04.2020 16:50"),"Звонок PhonePhoneReminderItem","954-433-22-11"),
+                new ChatReminderItem(DateTime.Parse("23.04.2020 16:50"),"Звонок ChatReminderItem","Чат одуванчик","Егорка"),
+                new Alarm(DateTime.Parse("23.04.2020 16:50"),"Звонок Alarm")
+            };
+            foreach (var item in list)
+            {
+                Console.WriteLine("Type: " + item.ToString() + "  :" + item.WriteProperties());
+            }
         }
     }
 }
