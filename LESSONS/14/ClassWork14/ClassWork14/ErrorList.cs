@@ -9,10 +9,10 @@ namespace ClassWork14
         public List<string> Error;
 
         
-        public ErrorList(string category,List<string> Error)
+        public ErrorList(string category,List<string> error)
         {
             Category = category;
-             Error = new List<string>();
+             Error = error;
         }
         public void Dispose()
         {
