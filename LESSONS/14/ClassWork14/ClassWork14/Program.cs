@@ -8,9 +8,12 @@ namespace ClassWork14
         {
 
 
-            using (var errors = new ErrorList( "Warning",  new List<string> { "xth", "zfs", "qwe"} ))
+            using (var errors = new ErrorList("Warning", new List<string> { "xth", "zfs", "qwe" }))
             {
-                foreach (var item in errors.Error)
+                errors.Add("New Error 1");
+
+
+                foreach (var item in errors)
                 {
                     Console.WriteLine(item);
                 }
