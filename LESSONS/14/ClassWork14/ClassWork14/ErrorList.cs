@@ -8,9 +8,11 @@ namespace ClassWork14
         public string Category { get; }
         public List<string> Error;
 
-        public ErrorList(string Category,List<string> Error)
+        
+        public ErrorList(string category,List<string> Error)
         {
-
+            Category = category;
+             Error = new List<string>();
         }
         public void Dispose()
         {
