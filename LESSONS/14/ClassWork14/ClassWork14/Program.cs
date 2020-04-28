@@ -15,6 +15,7 @@ namespace ClassWork14
 
                 foreach (var item in errors)
                 {
+                   
                     Console.WriteLine(item);
                 }
             }

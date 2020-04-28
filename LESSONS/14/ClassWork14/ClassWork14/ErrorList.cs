@@ -19,11 +19,12 @@ namespace ClassWork14
         {
             _error.Clear();
             _error = null;
-
         }
+
+      
         public void Add(string errorMessage)
         {
-            _error.Add(errorMessage);
+            _error.Add($"{Category}:{errorMessage}");
         }
 
         public IEnumerator<string> GetEnumerator()
