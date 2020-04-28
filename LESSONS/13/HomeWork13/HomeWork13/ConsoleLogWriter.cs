@@ -4,8 +4,7 @@
 namespace HomeWork13
 {
     class ConsoleLogWriter : ILogWriter
-    {
-      
+    {      
        public void LogInfo(string message)
         {
             var error = $"{DateTimeOffset.Now}/tInfo{message}";
