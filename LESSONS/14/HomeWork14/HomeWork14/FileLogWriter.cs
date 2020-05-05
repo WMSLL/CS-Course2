@@ -5,10 +5,10 @@ namespace HomeWork14
 {
     class FileLogWriter : ILogWriter
     {
-
-        private FileLogWriter()
+        string FaileName;
+        private FileLogWriter(string fileName)
         {
-
+            FaileName = fileName;
         }
 
         private static FileLogWriter _fileLogInstance;
@@ -17,28 +17,24 @@ namespace HomeWork14
         {
             get
             {
-                if (_fileLogInstance == null)
-                {
-                    _fileLogInstance = new FileLogWriter();
-                }
-                return _fileLogInstance;
+                return _fileLogInstance ?? (_fileLogInstance = new FileLogWriter("FileLog.txt"));
             }
         }
 
         public void LogInfo(string message)
         {
             var error = $"{DateTimeOffset.Now}/tInfo{message}";
-            File.AppendAllText("LogError.txt", error);
+            File.AppendAllText(FaileName, error);
         }
         public void LogWarning(string message)
         {
             var error = $"{DateTimeOffset.Now}/tWarning{message}";
-            File.AppendAllText("LogError.txt", error);
+            File.AppendAllText(FaileName, error);
         }
         public void LogError(string message)
         {
             var error = $"{DateTimeOffset.Now}/tError{message}";
-            File.AppendAllText("LogError.txt", error);
+            File.AppendAllText(FaileName, error);
         }
     }
 }

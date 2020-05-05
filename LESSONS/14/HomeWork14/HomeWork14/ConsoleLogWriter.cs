@@ -15,11 +15,7 @@ namespace HomeWork14
         {
             get
             {
-                if (_consoleLogInstance == null)
-                {
-                    _consoleLogInstance = new ConsoleLogWriter();
-                }
-                return _consoleLogInstance;
+                return _consoleLogInstance ?? (_consoleLogInstance = new ConsoleLogWriter());
             }
         }
 
