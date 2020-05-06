@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalculatorOperation\CalculatorOperation.csproj" />
     <ProjectReference Include="..\CircleStandart\CircleStandart.csproj" />
   </ItemGroup>
 
