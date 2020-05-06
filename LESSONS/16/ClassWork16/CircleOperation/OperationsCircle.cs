@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace CircleStandart
+namespace CircleOperation
 {
-    public class CircleClass
+    public class OperationsCircle
     {
         private double _radius;
 
-        public CircleClass(double radius)
+        public OperationsCircle(double radius)
         {
             _radius = radius;
         }

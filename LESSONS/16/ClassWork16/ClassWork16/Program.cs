@@ -1,6 +1,5 @@
 ﻿using System;
-using CircleStandart;
-using CalculatorOperation;
+
 
 namespace ClassWork16
 {
@@ -9,11 +8,12 @@ namespace ClassWork16
     { 
         static void Main(string[] args)
         {
-            var figure = new CircleClass(2.5);
-            Console.WriteLine(figure.Calculate(r => Math.PI * Math.Pow(r, 2)));
-
-            var opera = new ClassOperation(2.5);
-            Console.WriteLine(opera.Calculate(r => Math.PI * Math.Pow(r, 2)));
+            
+           var c = new Circle(1.5);
+           Func<double, double> oper1 =  r => 2.0 * r;
+            //   Func<double, double> oper2 = r => Math.PI*Math.Pow(r,2);          
+           Console.WriteLine(c.Calculate(oper1));          
+           Console.WriteLine(c.Calculate(r => Math.PI * Math.Pow(r, 2)));
         }
     }
 }
