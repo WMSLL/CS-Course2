@@ -11,6 +11,7 @@
             multiLog.LogInfo("Инфо");
             multiLog.LogWarning("Предуприждение");
             multiLog.LogError("Ошибка");
+
         }
     }
 }
