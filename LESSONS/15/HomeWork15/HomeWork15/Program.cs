@@ -7,10 +7,13 @@
             var ar1 = new FileLogWriter("LogError.txt");
             var ar2 = new ConsoleLogWriter();
             var log1 = new ILogWriter[]{ ar1, ar2};
-            var multiLog = new MultipleLogWriter(log1);
-            multiLog.LogInfo("LogInfo new123 1");
-            multiLog.LogError("LogError new1 23213 ");
-            multiLog.LogWarning("LogWarning new1 231 3 31");
+            var factory = LogWriteFactory.Factory;
+            var consLogWri = factory.GetLogWriter(new MultipleLogWriter(log1));
+            consLogWri.LogInfo("LogInfo  1");
+            consLogWri.LogError("LogError new1  ");
+            consLogWri.LogWarning("LogWarning new1  3 31"); 
         }
     }
+    
+
 }
