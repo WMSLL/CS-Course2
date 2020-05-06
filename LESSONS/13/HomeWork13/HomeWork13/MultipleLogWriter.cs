@@ -9,31 +9,22 @@ namespace HomeWork13
         {
             foreach (var item in _loggers)
             {
-                if (item is ILogWriter LogInfo)
-                {
-                    item.LogInfo(message);
-                }
-            }          
+                item.LogInfo(message);
+            }
         }
         public void LogWarning(string message)
         {
             foreach (var item in _loggers)
             {
-                if (item is ILogWriter LogWarning)
-                {
-                    item.LogWarning(message);
-                }
-            }           
+                item.LogWarning(message);
+            }
         }
         public void LogError(string message)
         {
             foreach (var item in _loggers)
             {
-                if (item is ILogWriter LogError)
-                {
-                    item.LogError(message);
-                }
-            }           
+                item.LogError(message);
+            }
         }
         public MultipleLogWriter(ILogWriter[] arg)
         {
