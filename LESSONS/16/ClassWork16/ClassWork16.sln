@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork16", "ClassWork16\ClassWork16.csproj", "{A85BC140-C414-4467-B2AD-99F7313B4F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleStandart", "CircleStandart\CircleStandart.csproj", "{17D1E8CC-4F12-4C51-B9C3-3AAC67D84C98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A85BC140-C414-4467-B2AD-99F7313B4F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85BC140-C414-4467-B2AD-99F7313B4F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85BC140-C414-4467-B2AD-99F7313B4F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85BC140-C414-4467-B2AD-99F7313B4F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D1E8CC-4F12-4C51-B9C3-3AAC67D84C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D1E8CC-4F12-4C51-B9C3-3AAC67D84C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D1E8CC-4F12-4C51-B9C3-3AAC67D84C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D1E8CC-4F12-4C51-B9C3-3AAC67D84C98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5B232AE-8EC7-4BCF-A4AB-CE23CC4223ED}
+	EndGlobalSection
+EndGlobal
