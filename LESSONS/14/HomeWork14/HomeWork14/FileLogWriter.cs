@@ -5,13 +5,13 @@ namespace HomeWork14
 {
     class FileLogWriter : ILogWriter
     {
-       private static string _faileName;
+        private static string _faileName;
         private FileLogWriter(string fileName)
         {
             _faileName = fileName;
         }
-        
-        public void RenameFileLog(string filename)
+
+        public static void RenameFileLog(string filename)
         {
             _faileName = filename;
         }
@@ -28,17 +28,17 @@ namespace HomeWork14
         public void LogInfo(string message)
         {
             var error = $"{DateTimeOffset.Now}/tInfo{message}";
-            File.AppendAllText(_faileName, error);
+            File.AppendAllText(_faileName, error + Environment.NewLine);
         }
         public void LogWarning(string message)
         {
             var error = $"{DateTimeOffset.Now}/tWarning{message}";
-            File.AppendAllText(_faileName, error);
+            File.AppendAllText(_faileName, error + Environment.NewLine);
         }
         public void LogError(string message)
         {
             var error = $"{DateTimeOffset.Now}/tError{message}";
-            File.AppendAllText(_faileName, error);
+            File.AppendAllText(_faileName, error + Environment.NewLine);
         }
     }
 }
