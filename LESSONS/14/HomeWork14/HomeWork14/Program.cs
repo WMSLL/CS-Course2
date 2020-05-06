@@ -8,12 +8,9 @@
             var conLog2 = FileLogWriter.FileLogInstance;
             var argMult = new ILogWriter[] { conLog2, conLog };
             var MultLog = new MultipleLogWriter(argMult);
-            foreach (var item in MultLog.LogWriter)
-            {
-                item.LogError("LogError");
-                item.LogInfo("LogError");
-                item.LogWarning("LogWarning");
-            }            
+            MultLog.LogError("LogError new new");
+            MultLog.LogInfo("LogInfo new new");
+            MultLog.LogWarning("LogWarning new new");
         }
     }
 }
