@@ -9,52 +9,31 @@ namespace HomeWork13
         {
             foreach (var item in _loggers)
             {
-                if (item is FileLogWriter LogInfo)
+                if (item is ILogWriter LogInfo)
                 {
                     item.LogInfo(message);
                 }
-            }
-            foreach (var item in _loggers)
-            {
-                if (item is ConsoleLogWriter LogInfo)
-                {
-                    item.LogInfo(message);
-                }
-            }
+            }          
         }
         public void LogWarning(string message)
         {
             foreach (var item in _loggers)
             {
-                if (item is FileLogWriter LogWarning)
+                if (item is ILogWriter LogWarning)
                 {
                     item.LogWarning(message);
                 }
-            }
-            foreach (var item in _loggers)
-            {
-                if (item is ConsoleLogWriter LogWarning)
-                {
-                    item.LogWarning(message);
-                }
-            }
+            }           
         }
         public void LogError(string message)
         {
             foreach (var item in _loggers)
             {
-                if (item is FileLogWriter LogError)
+                if (item is ILogWriter LogError)
                 {
                     item.LogError(message);
                 }
-            }
-            foreach (var item in _loggers)
-            {
-                if (item is ConsoleLogWriter LogError)
-                {
-                    item.LogError(message);
-                }
-            }
+            }           
         }
         public MultipleLogWriter(ILogWriter[] arg)
         {
