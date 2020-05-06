@@ -5,19 +5,23 @@ namespace HomeWork14
 {
     class FileLogWriter : ILogWriter
     {
-       private string _faileName;
+       private static string _faileName;
         private FileLogWriter(string fileName)
         {
             _faileName = fileName;
         }
-
+        
+        public void RenameFileLog(string filename)
+        {
+            _faileName = filename;
+        }
         private static FileLogWriter _fileLogInstance;
 
         public static FileLogWriter FileLogInstance
         {
             get
             {
-                return _fileLogInstance ?? (_fileLogInstance = new FileLogWriter("FileLog.txt"));
+                return _fileLogInstance ?? (_fileLogInstance = new FileLogWriter(_faileName));
             }
         }
 
