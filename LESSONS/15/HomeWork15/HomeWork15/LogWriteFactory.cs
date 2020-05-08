@@ -23,9 +23,8 @@
 
 
         public ILogWriter GetLogWriter<T>(T arg1) where T : ILogWriter
-        {
-            var w = arg1;
-            return w;
+        {           
+            return arg1;
         }
     }
 
