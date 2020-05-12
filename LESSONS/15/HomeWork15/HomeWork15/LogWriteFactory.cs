@@ -1,4 +1,9 @@
-﻿namespace HomeWork13
+﻿
+
+using System;
+using System.Runtime.InteropServices.ComTypes;
+
+namespace HomeWork13
 {
     class LogWriteFactory
     {
@@ -6,26 +11,36 @@
         {
 
         }
-        private static LogWriteFactory _factory;
+        private static LogWriteFactory _instance;
 
-        public static LogWriteFactory Factory
+        public static LogWriteFactory Instance
         {
             get
             {
-                if (_factory == null)
+                if (_instance == null)
                 {
-                    _factory = new LogWriteFactory();
+                    _instance = new LogWriteFactory();
                 }
-                return _factory;
-
+                return _instance;
             }
         }
 
 
-        public ILogWriter GetLogWriter<T>(T arg1) where T : ILogWriter
-        {           
-            return arg1;
+        public ILogWriter GetLogWriter<T>(T arg1) where T : ILogWriter, new()
+        {
+           
+            T obj = new T();
+            return obj;
         }
+
+        public ILogWriter GetLogWriter<T>(object arg1) where T : ILogWriter,new()
+        {
+
+            T obj = new T();
+            return obj;
+        }
+
+
     }
 
 

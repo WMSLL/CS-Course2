@@ -4,17 +4,17 @@
     {
         static void Main(string[] args)
         {
-            var fac = LogWriteFactory.Factory;
+            var clw = LogWriteFactory.Instance.GetLogWriter<ConsoleLogWriter>(null);
+            clw.LogError("Message LogError Console1");
+            clw.LogWarning("Message LogWarning Console");
+            clw.LogInfo("Message LogInfo Console");
 
-            var fileLog = fac.GetLogWriter(new FileLogWriter("FileLog1100.txt"));
-            fileLog.LogError("LogError 3");
-            fileLog.LogWarning("LogWarning 2");
-            fileLog.LogInfo("LogInfo 1");
 
-            var consoleLog = fac.GetLogWriter(new ConsoleLogWriter());
-            consoleLog.LogError("consoleLog LogError 4");
-            consoleLog.LogWarning("consoleLog LogWarning 5");
-            consoleLog.LogInfo("consoleLog LogInfo 6");
+            var flw = LogWriteFactory.Instance.GetLogWriter<FileLogWriter>("LogFile.Txt");
+
+            flw.LogError("Message LogError File");
+            flw.LogWarning("Message LogWarning File");
+            flw.LogInfo("Message LogInfo File");
         }
     }
 
