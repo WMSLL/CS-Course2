@@ -8,14 +8,8 @@ namespace HomeWork13
         public FileLogWriter(string filename)
         {
             _failNmae = filename;
-        }
-
-        public FileLogWriter()
-        {
-            
-        }
-
-
+        }  
+        
         public void LogInfo(string message)
         {
             var error = $"{DateTimeOffset.Now}/tInfo{message}";

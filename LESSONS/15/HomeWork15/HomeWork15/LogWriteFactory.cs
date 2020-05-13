@@ -23,25 +23,20 @@ namespace HomeWork13
                 }
                 return _instance;
             }
-        }
-
-
-        public ILogWriter GetLogWriter<T>(T arg1) where T : ILogWriter, new()
+        }   
+        public ILogWriter GetLogWriter<T>(object arg1) where T : ILogWriter
         {
-           
-            T obj = new T();
-            return obj;
+            if (typeof(T)==typeof(FileLogWriter))
+            {
+                return new FileLogWriter(arg1 as string);
+            }
+            else if (typeof(T) == typeof(ConsoleLogWriter))
+            {
+                return new ConsoleLogWriter();
+            }else
+            {
+                return new MultipleLogWriter(arg1 as ILogWriter[]);
+            }            
         }
-
-        public ILogWriter GetLogWriter<T>(object arg1) where T : ILogWriter,new()
-        {
-
-            T obj = new T();
-            return obj;
-        }
-
-
-    }
-
-
+    }    
 }
