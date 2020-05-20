@@ -5,6 +5,11 @@ namespace Reminder.Storage.Memory
     public class ReminderItemStorege : IReminderItem
     {
         private Dictionary<Guid, ReminderItem> _item;
+
+        public ReminderItemStorege()
+        {
+        }
+
         public ReminderItemStorege(Dictionary<Guid, ReminderItem> item)
         {
             _item = item;
