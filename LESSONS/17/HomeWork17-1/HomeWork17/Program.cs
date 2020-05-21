@@ -6,25 +6,23 @@ namespace HomeWork17
     {
         static void Main(string[] args)
         {
-            var writer1 = new FileWriterWithProgress();
-            writer1.GenAct += OnStatrt;
-            var data = new byte[100];
+            var fileWriter = new FileWriterWithProgress();
+            fileWriter.WritePerformed += ActionsEvent;
+            fileWriter.WriteCompleted += EndEvent;
             var random = new Random();
-            random.NextBytes(data);
-
-            OnStatrt(data);
-            for (int i = 0; i <= data.GetUpperBound(0); i++)
-            {
-                Console.WriteLine("{0}: {1}", i, data[i]);
-            }            
+            var array = new byte[100];
+            random.NextBytes(array);
+            fileWriter.WriteBytes("FileByteLog.txt", array, 0.1f);
         }
 
-        private static void OnStatrt(byte[] obj)
+        private static void EndEvent(byte obj)
         {
-            for (int i = 0; i <= obj.GetUpperBound(0); i++)
-            {
-                Console.WriteLine("{0}: {1}", i, obj[i]);
-            }
+            Console.WriteLine($"Конечное событие{obj}");
+        }
+
+        private static void ActionsEvent(byte obj)
+        {
+            Console.WriteLine($"Сгенерировано событие {obj}");
         }
     }
 }
