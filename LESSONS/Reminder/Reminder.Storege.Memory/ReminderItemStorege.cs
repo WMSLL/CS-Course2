@@ -18,13 +18,19 @@ namespace Reminder.Storage.Memory
         //
         public void Add(ReminderItem item)
         {
+          
             if (item == null)
             {
                 throw new ArgumentNullException(nameof(item));
             }
-           
-            var key = item.id;
+
+            if (_item.ContainsKey(item.id))
+            {
+                throw new ArgumentException("Reminder item with key already exists",nameof(item));
+            }
+            var key = item.id; 
             _item.Add(key, item);
+
         }   
 
         public void Delete(Guid id)

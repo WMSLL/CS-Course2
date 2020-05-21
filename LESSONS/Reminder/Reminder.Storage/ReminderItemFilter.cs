@@ -17,10 +17,10 @@ namespace Reminder.Storage
             Status = status;
         }
 
-        public static ReminderItemFilter ByStatus(ReminderItemStatus status)
-        {
-
-        }
+      // public static ReminderItemFilter ByStatus(ReminderItemStatus status)
+      // {
+      //
+      // }
 
       
 

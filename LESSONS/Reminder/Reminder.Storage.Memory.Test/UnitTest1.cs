@@ -18,7 +18,9 @@ namespace Reminder.Storage.Memory.Test
         public void WhenItemExists_ThenArgumentException()
         {            
             var storage = new ReminderItemStorege();
-            Assert.Catch<ArgumentNullException>(() => storage.Add(null));
+            var reminderItem = new ReminderItem(Guid.NewGuid(),"Good","Message",DateTimeOffset.UtcNow,"UserName");
+            storage.Add(reminderItem);
+            Assert.Catch<ArgumentException>(() => storage.Add(reminderItem));
         }
 
 
