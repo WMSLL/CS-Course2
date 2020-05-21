@@ -41,6 +41,11 @@ namespace Reminder.Storage.Memory
             throw new NotImplementedException();
         }
 
+        public ReminderItem[] FindByStatus(ReminderItem.ReminderItemStatus status)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(ReminderItem item)
         {
            
