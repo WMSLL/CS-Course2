@@ -14,15 +14,13 @@ namespace HomeWork17
             random.NextBytes(array);
             fileWriter.WriteBytes("FileByteLog.txt", array, 0.1f);
         }
-
-        private static void EndEvent(byte obj)
+        private static void EndEvent(object sender, EventArgs e)
         {
-            Console.WriteLine($"Конечное событие{obj}");
+            Console.WriteLine($"Сгенерировано Конечное событие {sender}");
         }
-
-        private static void ActionsEvent(byte obj)
+        private static void ActionsEvent(object sender, byte e)
         {
-            Console.WriteLine($"Сгенерировано событие {obj}");
+            Console.WriteLine($"Сгенерировано событие {e}");
         }
     }
 }

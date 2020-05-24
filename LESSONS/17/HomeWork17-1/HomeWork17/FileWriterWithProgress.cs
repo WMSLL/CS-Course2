@@ -5,8 +5,8 @@ namespace HomeWork17
 {
     class FileWriterWithProgress
     {
-        public event Action<byte> WritePerformed;
-        public event Action<byte> WriteCompleted;
+        public event EventHandler<byte> WritePerformed;
+        public event EventHandler WriteCompleted;
         public void WriteBytes(string fileName, byte[] data, float percentageToFireEvent)
         {
             var lenght = data.Length;
@@ -15,13 +15,10 @@ namespace HomeWork17
                 File.AppendAllText(fileName, data[i].ToString() + Environment.NewLine);
                 if (i % (percentageToFireEvent * 100.0f) == 0)
                 {
-                    WritePerformed(data[i]);
-                }
-                if (i == lenght - 1)
-                {
-                    WriteCompleted(data[i]);
+                    WritePerformed?.Invoke(this, data[i]);
                 }
             }
+            WriteCompleted?.Invoke(this, EventArgs.Empty);
         }
     }
 }
