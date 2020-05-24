@@ -5,9 +5,16 @@ namespace Reminder.Storage.Memory
     public class ReminderItemStorege : IReminderItem
     {
         private Dictionary<Guid, ReminderItem> _item;
-        public ReminderItemStorege(Dictionary<Guid, ReminderItem> item)
+        public ReminderItemStorege(ReminderItem[] item )
         {
-            _item = item;
+            foreach (var items in item)
+            {
+                _item = items;
+            }      
+        }
+        public ReminderItemStorege()
+        {
+            
         }
         public void Add(ReminderItem item)
         {
@@ -25,8 +32,16 @@ namespace Reminder.Storage.Memory
         }
 
         public void Delete(Guid id)
-        {        // На удаление думаю и теста не нужно.    
-            _item.Remove(id);
+        {
+            if (_item.ContainsKey(id))
+            {
+                _item.Remove(id);
+            }
+            else
+            {
+                throw new ArgumentException($"Reminder item with id {id},not exists", nameof(id));
+            }
+            
         }
         public ReminderItem Find(Guid id)
         {
