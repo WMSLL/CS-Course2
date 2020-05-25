@@ -45,21 +45,6 @@ namespace Reminder.Storage.Memory.Tests
                 var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Find(items.Id));
             }
 
-        }
-
-        [Test]
-        public void WhenFindByDateTime()
-        {
-
-            var storage = new ReminderItemStorage();
-            var reminder = new ReminderItem[]{ new ReminderItem(Guid.NewGuid()
-                                            , "Test1"
-                                            , "Reminder1"
-                                            , DateTimeOffset.UtcNow
-                                            , "UserName") };
-            storage.Add(reminder);
-            Assert.Catch <ArgumentNullException>(()=>storage.FindByDateTime(DateTimeOffset.UtcNow));
-        }
-        
+        }     
     }
 }

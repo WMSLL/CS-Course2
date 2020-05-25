@@ -19,8 +19,8 @@ namespace Reminder.Domain
         }
         public void Run()
         {
-            var _readyTime = new TimerThreading(OnReadyTimerTick, null, TimeSpan.Zero, _settings.ReadyTimeInterval);
-            var _sendTime = new TimerThreading(OnSenderTimerTick, null, TimeSpan.Zero, _settings.SendTimeInterval);
+            _readyTime = new TimerThreading(OnReadyTimerTick, null, TimeSpan.Zero, _settings.ReadyTimeInterval);
+            _sendTime = new TimerThreading(OnSenderTimerTick, null, TimeSpan.Zero, _settings.SendTimeInterval);
         }
         public void Dispose()
         {
