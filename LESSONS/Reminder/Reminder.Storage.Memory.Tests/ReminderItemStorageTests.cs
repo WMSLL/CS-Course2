@@ -59,9 +59,7 @@ namespace Reminder.Storage.Memory.Tests
                                             , "UserName") };
             storage.Add(reminder);
             Assert.Catch <ArgumentNullException>(()=>storage.FindByDateTime(DateTimeOffset.UtcNow));
-           
-
-
         }
+        
     }
 }

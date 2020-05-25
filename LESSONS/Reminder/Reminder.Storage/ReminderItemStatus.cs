@@ -2,7 +2,7 @@
 {
   public  enum ReminderItemStatus
     {
-        Undefined=0,Created,Ready,Send,Filed
+        Undefined=0,Created,Ready,Sent,Filed
     }
 
 }
