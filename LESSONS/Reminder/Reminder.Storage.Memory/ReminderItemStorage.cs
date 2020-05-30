@@ -10,7 +10,15 @@ namespace Reminder.Storage.Memory
         public ReminderItemStorage()
         {
             _item = new Dictionary<Guid, ReminderItem>();
-        }     
+        }
+
+        public ReminderItemStorage(ReminderItem[] items)
+        {
+            foreach (var item in items)
+            {
+                _item.Add(item.Id, item);
+            }
+        }
 
         public void Add(ReminderItem[] item)
         {
@@ -86,7 +94,15 @@ namespace Reminder.Storage.Memory
 
         public void Update(ReminderItem item)
         {
-           // throw new NotImplementedException();
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            if (!_item.ContainsKey(item.Id))
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            _item[item.Id] = item;
         }
     }
 
