@@ -22,12 +22,12 @@ namespace Reminder.Storage.Memory
 
         public void Add(ReminderItem[] item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
             foreach (var items in item)
             {
-                if (item == null)
-                {
-                    throw new ArgumentNullException(nameof(item));
-                }
                 if (_item.ContainsKey(items.Id))
                 {
                     throw new ArgumentException($"ReminderItem with header {items.Title} and id {items.Id} already exists in memory storage", nameof(item));
@@ -39,18 +39,23 @@ namespace Reminder.Storage.Memory
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            if (_item.ContainsKey(id))
+            {
+                _item.Remove(id);
+            }
+            throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
         }
 
         public ReminderItem Find(Guid id)
         {
             if (_item.ContainsKey(id))
             {
-                throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
+                return _item[id];
             }
-            return _item[id];
-        }
+            else
+            throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
 
+        }
         public ReminderItem[] FindBy(ReminderItemFilter filter)
         {
             var query = _item.Values.AsEnumerable();
@@ -65,33 +70,18 @@ namespace Reminder.Storage.Memory
             }
             return query.ToArray();
         }
-
         public ReminderItem[] FindByDateTime(DateTimeOffset datetime)
         {
-            List<ReminderItem> listReminderItem = null;
-            foreach (var items in _item.Values)
+            var itemList = new List<ReminderItem>();
+            foreach (var (key, values) in _item)
             {
-                if (items == null)
+                if (values.DateTimeUTC <= datetime)
                 {
-                    throw new ArgumentNullException($"No matching criteria ReminderItem", nameof(items));
-                }
-                if (items.DateTimeUTC < datetime)
-                {
-                    listReminderItem.Add(items);
+                    itemList.Add(values);
                 }
             }
-            var counts = listReminderItem.Count;
-            var arrey = new ReminderItem[counts];
-            for (int i = 0; i < counts; i++)
-            {
-                arrey[i] = listReminderItem[i];
-            }
-            return arrey;
+            return itemList.ToArray();
         }
-
-
-
-
         public void Update(ReminderItem item)
         {
             if (item == null)

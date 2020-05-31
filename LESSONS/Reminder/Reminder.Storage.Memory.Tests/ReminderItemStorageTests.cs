@@ -38,13 +38,26 @@ namespace Reminder.Storage.Memory.Tests
                                             , "Test1"
                                             , "Reminder1"
                                             , DateTimeOffset.UtcNow
-                                            , "UserName") };          
-            storage.Add(reminder);
+                                            , "UserName") };
             foreach (var items in reminder)
             {
                 var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Find(items.Id));
             }
+        }
+        [Test]
+        public void WhenDeleteItemDoesnExist_ThenThrowsKeyNotFoundException()
+        {
+            var storage = new ReminderItemStorage();
+            var newGuid = Guid.NewGuid();            
+            var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Delete(newGuid));
+        }
 
-        }     
+        [Test]
+        public void WhenUpdateItemDoesnExist_ThenThrowsKeyNotFoundException()
+        {
+            var storage = new ReminderItemStorage();
+            var newGuid = Guid.NewGuid();
+            var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Delete(newGuid));
+        }
     }
 }
