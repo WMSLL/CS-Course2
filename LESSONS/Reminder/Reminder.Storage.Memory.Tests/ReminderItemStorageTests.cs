@@ -48,16 +48,40 @@ namespace Reminder.Storage.Memory.Tests
         public void WhenDeleteItemDoesnExist_ThenThrowsKeyNotFoundException()
         {
             var storage = new ReminderItemStorage();
-            var newGuid = Guid.NewGuid();            
+            var newGuid = Guid.NewGuid();
             var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Delete(newGuid));
         }
 
         [Test]
-        public void WhenUpdateItemDoesnExist_ThenThrowsKeyNotFoundException()
+        public void WhenUpdateItemDoesnExist_ThenThrowsArgumentException()
         {
             var storage = new ReminderItemStorage();
-            var newGuid = Guid.NewGuid();
-            var exeption = Assert.Catch<KeyNotFoundException>(() => storage.Delete(newGuid));
+            var reminder = new ReminderItem(Guid.NewGuid()
+                                            , "Test1"
+                                            , "Reminder1"
+                                            , DateTimeOffset.UtcNow
+                                            , "UserName");
+            var exeption = Assert.Catch<ArgumentException>(() => storage.Update(reminder));
+        }
+
+        [Test]
+        public void WhenUpdateItem_ThenCallFind()
+        {
+            var reminder = new ReminderItem(Guid.NewGuid()
+                                              , "Test1"
+                                              , "Reminder1"
+                                              , DateTimeOffset.UtcNow
+                                              , "UserName1");
+            var reminder2 = new ReminderItem(Guid.NewGuid()
+                                              , "Test2"
+                                              , "Reminder2"
+                                              , DateTimeOffset.UtcNow.AddMinutes(-1)
+                                              , "UserName2");
+            
+              var storage = new ReminderItemStorage(new[] { reminder, reminder2 });
+            var exeption = Assert.Catch<ArgumentException>(() => storage.Update(reminder));
+
+           // Assert.AreEqual();
         }
     }
 }

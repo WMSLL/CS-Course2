@@ -90,7 +90,7 @@ namespace Reminder.Storage.Memory
             }
             if (!_item.ContainsKey(item.Id))
             {
-                throw new ArgumentNullException(nameof(item));
+                throw new ArgumentException(nameof(item));
             }
             _item[item.Id] = item;
         }
