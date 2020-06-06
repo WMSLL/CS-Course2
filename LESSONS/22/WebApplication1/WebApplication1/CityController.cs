@@ -8,13 +8,13 @@ namespace WebApplication1
     { 
         public string Title { get; set; }
         public Guid Id { get; set; }
-        public DateTimeOffset DateTime { get; set; }
+        public string Description { get; set; }
         public int Population { get; set; }
 
-        public City(string title, DateTimeOffset dateTime, int population)
+        public City(string title, string description, int population)
         {
             Title = title;
-            DateTime = dateTime;
+            Description = description;
             Population = population;
             Id = Guid.NewGuid();
         }

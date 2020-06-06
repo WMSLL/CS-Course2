@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L22_C01_empty_asp_net_core_app_middleware", "L22_C01_empty_asp_net_core_app_middleware\L22_C01_empty_asp_net_core_app_middleware.csproj", "{CDA5799F-D6AA-471A-9948-C5DA5AA5575A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L22_C02_empty_asp_net_core_app_mvc", "L22_C02_empty_asp_net_core_app_mvc\L22_C02_empty_asp_net_core_app_mvc.csproj", "{24DCDC52-B5E1-4B4C-8C5A-19DB59340FBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9C7DB02-7567-4D1F-A0AB-AB1CF8AAEB13}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDA5799F-D6AA-471A-9948-C5DA5AA5575A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA5799F-D6AA-471A-9948-C5DA5AA5575A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA5799F-D6AA-471A-9948-C5DA5AA5575A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA5799F-D6AA-471A-9948-C5DA5AA5575A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DCDC52-B5E1-4B4C-8C5A-19DB59340FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DCDC52-B5E1-4B4C-8C5A-19DB59340FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DCDC52-B5E1-4B4C-8C5A-19DB59340FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DCDC52-B5E1-4B4C-8C5A-19DB59340FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
