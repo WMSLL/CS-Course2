@@ -55,7 +55,7 @@ namespace Reminder.Storage.Memory
             else
             throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
 
-        }
+        } 
         public ReminderItem[] FindBy(ReminderItemFilter filter)
         {
             var query = _item.Values.AsEnumerable();

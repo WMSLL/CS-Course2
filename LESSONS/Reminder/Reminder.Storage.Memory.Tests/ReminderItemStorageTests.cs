@@ -32,7 +32,7 @@ namespace Reminder.Storage.Memory.Tests
         }
         [Test]
         public void WhenItemNotExists_ThenCanFindById()
-        {
+        { 
             var storage = new ReminderItemStorage();
             var reminder = new ReminderItem[]{ new ReminderItem(Guid.NewGuid()
                                             , "Test1"
