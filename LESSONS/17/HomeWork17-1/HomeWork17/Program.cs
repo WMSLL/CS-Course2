@@ -17,9 +17,10 @@ namespace HomeWork17
 
         private static void ActionsEvent(object sender, WritePerformedEventArgs e)
         {
-           
-                Console.WriteLine($"Сгенерировано событие {e}");
-             
+            foreach (var item in e.DataSet)
+            {
+                Console.WriteLine($"Сгенерировано событие {item}");
+            } 
         }
 
         private static void EndEvent(object sender, EventArgs e)

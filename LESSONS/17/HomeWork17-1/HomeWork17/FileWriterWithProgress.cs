@@ -15,7 +15,7 @@ namespace HomeWork17
                 File.AppendAllText(fileName, dataSet[i].ToString() + Environment.NewLine);
                 if (i % (percentageToFireEvent * 100.0f) == 0)
                 {
-                    WritePerformed?.Invoke(this, new WritePerformedEventArgs(dataSet) );
+                    WritePerformed?.Invoke(this,new WritePerformedEventArgs(dataSet) );
                 }
             }
             WriteCompleted?.Invoke(this, EventArgs.Empty);
