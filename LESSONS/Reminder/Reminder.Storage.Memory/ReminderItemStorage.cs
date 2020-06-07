@@ -51,7 +51,7 @@ namespace Reminder.Storage.Memory
             if (_item.ContainsKey(id))
             {
                 return _item[id];
-            }
+            }  
             else
             throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
 

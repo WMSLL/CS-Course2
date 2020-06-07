@@ -6,7 +6,7 @@ namespace Reminder.Storage
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string Message { get; set; }
-        public DateTimeOffset DateTimeUTC { get; set; }
+        public DateTimeOffset DateTimeUTC { get; set; } 
         public string UserId { get; set; }
         public ReminderItemStatus Status { get; set; }
         public ReminderItem(Guid id, 
