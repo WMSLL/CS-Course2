@@ -3,27 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage", "Reminder.Storage\Reminder.Storage.csproj", "{54087F15-0556-41E9-AB9B-B74484CC9C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage", "Reminder.Storage\Reminder.Storage.csproj", "{54087F15-0556-41E9-AB9B-B74484CC9C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.Memory", "Reminder.Storage.Memory\Reminder.Storage.Memory.csproj", "{CB5DC420-DE44-448F-BD50-E3FD558717BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Memory", "Reminder.Storage.Memory\Reminder.Storage.Memory.csproj", "{CB5DC420-DE44-448F-BD50-E3FD558717BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.Memory.Tests", "Reminder.Storage.Memory.Tests\Reminder.Storage.Memory.Tests.csproj", "{3C6152E8-E19B-4478-8286-34F0393973CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Memory.Tests", "Reminder.Storage.Memory.Tests\Reminder.Storage.Memory.Tests.csproj", "{3C6152E8-E19B-4478-8286-34F0393973CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Domain", "Reminder.Domain\Reminder.Domain.csproj", "{D3455F0F-032C-4B3B-9227-E6D8FB645690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain", "Reminder.Domain\Reminder.Domain.csproj", "{D3455F0F-032C-4B3B-9227-E6D8FB645690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.Test", "Reminder.Storage.Test\Reminder.Storage.Test.csproj", "{90A093DF-F727-4921-9412-E0E10908AFF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Test", "Reminder.Storage.Test\Reminder.Storage.Test.csproj", "{90A093DF-F727-4921-9412-E0E10908AFF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder", "Reminder\Reminder.csproj", "{4FA360E2-7F3A-4478-AF9A-21677CBA38C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder", "Reminder\Reminder.csproj", "{4FA360E2-7F3A-4478-AF9A-21677CBA38C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver", "Reminder.Receiver\Reminder.Receiver.csproj", "{19F13881-5BF8-4EDB-A3ED-643FB8FFC895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver", "Reminder.Receiver\Reminder.Receiver.csproj", "{19F13881-5BF8-4EDB-A3ED-643FB8FFC895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Sender", "Reminder.Sender\Reminder.Sender.csproj", "{49A08260-EDF4-4F9A-BF4A-1B3F664765AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender", "Reminder.Sender\Reminder.Sender.csproj", "{49A08260-EDF4-4F9A-BF4A-1B3F664765AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Test", "Reminder.Receiver.Test\Reminder.Receiver.Test.csproj", "{473F15BC-5A16-4FF9-8146-33F1071DA8D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver.Test", "Reminder.Receiver.Test\Reminder.Receiver.Test.csproj", "{473F15BC-5A16-4FF9-8146-33F1071DA8D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Telegram", "Reminder.Receiver.Telegram\Reminder.Receiver.Telegram.csproj", "{1D2DDF77-3A6D-4DCA-9470-06F9993F85F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver.Telegram", "Reminder.Receiver.Telegram\Reminder.Receiver.Telegram.csproj", "{1D2DDF77-3A6D-4DCA-9470-06F9993F85F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{A70DDB5C-1155-48EC-BF8A-496516FABBB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{A70DDB5C-1155-48EC-BF8A-496516FABBB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Domain.Tests", "Reminder.Domain.Tests\Reminder.Domain.Tests.csproj", "{33381E0B-08D3-4F7B-87B4-25F10CC34980}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{A70DDB5C-1155-48EC-BF8A-496516FABBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70DDB5C-1155-48EC-BF8A-496516FABBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70DDB5C-1155-48EC-BF8A-496516FABBB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,7 +14,7 @@ namespace Reminder.Domain
         private readonly IReminderItemSender _sender;
         private TimerThreading _readyTime;
         private TimerThreading _sendTime;
-        public ReminderScheduler(IReminderItemStorage storage
+        public ReminderScheduler( IReminderItemStorage storage
                                 , IReminderItemRecieiver receiver
                                 , IReminderItemSender sender
                                 , ReminderSchedulerSettings settings)
