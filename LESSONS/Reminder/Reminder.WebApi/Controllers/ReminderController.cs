@@ -98,7 +98,7 @@ namespace Reminder.WebApi.Controllers
                 _storage.Delete(id);
                 return NoContent();
             }
-            catch (KeyNotFoundException e)
+            catch (KeyNotFoundException )
             {
 
                 return NotFound();
