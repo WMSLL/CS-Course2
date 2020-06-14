@@ -43,6 +43,7 @@ namespace Reminder.Storage.Memory
             {
                 _item.Remove(id);
             }
+            else
             throw new KeyNotFoundException($"ReminderItem with id {id} allready exists is memory storage ");
         }
 
@@ -64,6 +65,7 @@ namespace Reminder.Storage.Memory
             {
                 query = query.Where(item => item.Status == filter.Status);
             }
+
             if (filter.IsByDateTime)
             {
                 query = query.Where(item => item.DateTimeUTC <= filter.DateTime);

@@ -1,27 +1,76 @@
 using NUnit.Framework;
 using Reminder.Storage.Memory;
-using Reminder.Receiver.Telegram;
-using Reminder.Sender.Telegram;
 using System;
+using Reminder.Storage;
+using Reminder.Receiver;
+using Reminder.Sender;
+using System.Threading;
 
 namespace Reminder.Domain.Tests
 {
+    internal class ReminderItemReceiver : IReminderItemRecieiver
+    {
+        public event EventHandler<MessageReceiventEventArgs> MessageReceivet;
+    }
+    internal class ReminderItemSender : IReminderItemSender
+    {
+        public void send(ReminderNotification notification)
+        {
+            
+        }
+    }
     public class Tests
     {
         [Test]
-        public void Test1()
-        {
-            const string token = "1195265347:AAFqPN_gjbV95a369tnRuysJKSNt4DVn9ms";
-            var SchedulerSettings =
-                new ReminderSchedulerSettings(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(10));
-            var she = new ReminderScheduler(
-                                  new ReminderItemStorage()
-                                , new ReminderItemReceiver(token)
-                                , new ReminderItemSender(token)
-                                , SchedulerSettings);
-            she.Run();
+        public void GivenItemWhithCreatedStatus_whenRunInvokedAnd_ThenStatusChangedToSent()
+        {            
+            var reminder = new ReminderItem[]{ new ReminderItem(Guid.NewGuid()
+                                            , "Test1"
+                                            , "Reminder1"
+                                            , DateTimeOffset.UtcNow.AddMinutes(-1)
+                                            , "UserName") };
+            var storage = new ReminderItemStorage(reminder);
 
-            //Assert.Pass();
+            using var cheduler = new ReminderScheduler(
+                storage,
+                new ReminderItemReceiver(),
+                new ReminderItemSender(),
+                new ReminderSchedulerSettings(TimeSpan.FromMilliseconds(300), 
+                                               TimeSpan.FromMilliseconds(3000))
+                );
+
+            cheduler.Run();
+            Thread.Sleep(TimeSpan.FromMilliseconds(800));
+            var item = storage.FindBy( ReminderItemFilter.ByStatus(ReminderItemStatus.Sent));
+            // goto нет sleep
+            Assert.IsNotNull(item);
         }
+        [Test]
+        public void test2()
+        {
+            var reminder = new ReminderItem[]{ new ReminderItem(Guid.NewGuid()
+                                            , "Test1"
+                                            , "Reminder1"
+                                            , DateTimeOffset.UtcNow.AddMinutes(-1)
+                                            , "UserName") };
+            var storage = new ReminderItemStorage(reminder);
+
+            using var cheduler = new ReminderScheduler(
+                storage,
+                new ReminderItemReceiver(),
+                new ReminderItemSender(),
+                new ReminderSchedulerSettings(TimeSpan.FromMilliseconds(300),
+                                               TimeSpan.FromMilliseconds(500))
+                );
+
+            cheduler.Run();
+            Thread.Sleep(TimeSpan.FromMilliseconds(800));
+            var item = storage.FindBy(ReminderItemFilter.ByStatus(ReminderItemStatus.Filed));
+            // goto нет sleep
+            Assert.IsNotNull(item);
+        }
+
     }
+
+    
 }

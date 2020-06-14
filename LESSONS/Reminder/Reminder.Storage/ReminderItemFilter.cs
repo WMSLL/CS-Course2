@@ -9,25 +9,25 @@ namespace Reminder.Storage
         public bool IsByDateTime => DateTime != default;
         public bool IsByStatus => Status!=default;
 
+        public static ReminderItemFilter All => new ReminderItemFilter(default,default);
 
-        public static ReminderItemFilter ByStatus(ReminderItemStatus status) =>
-                                                                               new ReminderItemFilter
-                                                                               {
-                                                                                   Status = status
-                                                                               };
+        public ReminderItemFilter (ReminderItemStatus status,DateTimeOffset datetime)
+        {
+            Status = status;
+            DateTime = datetime;
+        }
+
+        public static ReminderItemFilter ByStatus(ReminderItemStatus status) => new ReminderItemFilter(status, default);
 
 
-        public static ReminderItemFilter ByDateTime(DateTimeOffset dateTime) =>
-                                                                               new ReminderItemFilter
-                                                                               {
-                                                                                   DateTime = dateTime
-                                                                               };
 
-        public static ReminderItemFilter FromNow() => new ReminderItemFilter
+        public static ReminderItemFilter ByDateTime(DateTimeOffset dateTime) => new ReminderItemFilter(default, dateTime);
+                                                                              
+
+        public static ReminderItemFilter FromNow() => new ReminderItemFilter(ReminderItemStatus.Created , DateTimeOffset.UtcNow)
         {
             Status = ReminderItemStatus.Created,
             DateTime = DateTimeOffset.UtcNow
-
         };
 
         

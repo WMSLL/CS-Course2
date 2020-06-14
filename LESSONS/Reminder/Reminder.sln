@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver.Telegram"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{A70DDB5C-1155-48EC-BF8A-496516FABBB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Domain.Tests", "Reminder.Domain.Tests\Reminder.Domain.Tests.csproj", "{33381E0B-08D3-4F7B-87B4-25F10CC34980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain.Tests", "Reminder.Domain.Tests\Reminder.Domain.Tests.csproj", "{33381E0B-08D3-4F7B-87B4-25F10CC34980}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{233B91C6-DF7B-408C-91C0-EDA2540DA7BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.WebApi", "Reminder.WebApi\Reminder.WebApi.csproj", "{F40A0BFC-6BF4-4405-9EA0-A0F967D9E999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,9 +85,19 @@ Global
 		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33381E0B-08D3-4F7B-87B4-25F10CC34980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40A0BFC-6BF4-4405-9EA0-A0F967D9E999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40A0BFC-6BF4-4405-9EA0-A0F967D9E999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40A0BFC-6BF4-4405-9EA0-A0F967D9E999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40A0BFC-6BF4-4405-9EA0-A0F967D9E999}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C6152E8-E19B-4478-8286-34F0393973CE} = {233B91C6-DF7B-408C-91C0-EDA2540DA7BA}
+		{90A093DF-F727-4921-9412-E0E10908AFF5} = {233B91C6-DF7B-408C-91C0-EDA2540DA7BA}
+		{473F15BC-5A16-4FF9-8146-33F1071DA8D7} = {233B91C6-DF7B-408C-91C0-EDA2540DA7BA}
+		{33381E0B-08D3-4F7B-87B4-25F10CC34980} = {233B91C6-DF7B-408C-91C0-EDA2540DA7BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07091478-0A00-41A5-9C98-6B5D5106D3F3}
