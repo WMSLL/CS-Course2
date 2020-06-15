@@ -79,7 +79,10 @@ namespace Reminder.Storage.Memory.Tests
                                               , "UserName2");
             
               var storage = new ReminderItemStorage(new[] { reminder, reminder2 });
+            reminder.Message = "Message2205";
             var exeption = Assert.Catch<ArgumentException>(() => storage.Update(reminder));
+            Console.WriteLine(reminder.Message);
+            Assert.AreEqual("Message2205",reminder.Message);
 
            // Assert.AreEqual();
         }
