@@ -24,3 +24,5 @@ where  datename(YEAR,orderDate )='2018'
 
 Select max(len(Name))
 From product
+
+--Select
