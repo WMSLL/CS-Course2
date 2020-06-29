@@ -8,7 +8,7 @@ Select max(id)
 From [order]
 
 
-Select avg(isnull(Discount,0))
+Select avg(Discount)
 From [order]
 
 

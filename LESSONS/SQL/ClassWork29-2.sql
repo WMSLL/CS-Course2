@@ -18,3 +18,5 @@ Select o.customerid,c.name
 From [Order] o join customer c on c.id=o.customerid
 where OrderDate=(Select min(OrderDate)From [Order] where YEAR(OrderDate)=2019
 )
+
+
